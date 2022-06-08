@@ -11,10 +11,17 @@
         <section class="secondSection">
             <div class="box" >
                 <article class="article" *ngFor="let l of characters.results">   
-                    <div class="imgArticle">
-                        <img [src]="l.image">
-                    </div>             
-                    <p style="color:blue">{{l.name}}</p>
+                    <div class="divArticle">
+                        <img class="imgArticle" [src]="l.image">
+                    </div>   
+                    <div class="datosArticle">
+                        <section>
+                            <p style="color:blue">{{l.name}}</p>
+                            <span> {{l.status}}-{{l.species}}</span>
+                        </section>
+                        <section></section>
+                        <section></section>
+                    </div>          
                 </article>
             </div>
         </section>
