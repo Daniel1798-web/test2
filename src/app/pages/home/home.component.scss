@@ -48,3 +48,14 @@
     background: rgb(32, 35, 41);
     min-height: calc(50vh - 60px);
 }
+
+.box{
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1920px;
+
+}

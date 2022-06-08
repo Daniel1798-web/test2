@@ -9,11 +9,10 @@
             </div>
         </section>
         <section class="secondSection">
-            <div class="box">
-
+            <div class="box" *ngFor="let l of characters.results">
+                <p style="color:blue">{{l.name}}</p>
             </div>
         </section>
     </main>
-    <footer>s</footer>
 </div>
 </div>
