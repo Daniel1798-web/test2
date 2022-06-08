@@ -1,6 +1,11 @@
 <div class="dad">
 <div class="hijo">
-    <app-header class="headerHome"></app-header>
+    <app-header class="headerHome" 
+    (locations)="showLocationsHome($event)"
+    (characters)="showCharactersHome($event)"
+    (episodes)="showEpisodesHome($event)"
+    >
+</app-header>
     <main>
         <section class="firstSection">
             <h1 class="title">The Rick and Morty Test</h1>
@@ -8,7 +13,7 @@
                 <img  src="../../../assets/svg/rick.jpg" class="imgR">
             </div>
         </section>
-        <section class="secondSection">
+        <section class="secondSection" *ngIf="character">
             <div class="box" >
                 <article class="article" *ngFor="let l of characters.results">   
                     <div class="divArticle">
@@ -31,7 +36,71 @@
                         </section>
                         <section class="section">
                             <span>First seen in:</span>
-                            <span>{{l.episode[0].name}}</span>
+                            <span>{{l.created.name}}</span>
+                            <a></a>
+                        </section>
+                    </div>          
+                </article>
+            </div>
+        </section>
+
+     <!--   <section class="secondSection" *ngIf="location">
+            <div class="box" >
+                <article class="article" *ngFor="let l of characters.results">   
+                    <div class="divArticle">
+                        <img class="imgArticle" [src]="l.name">
+                    </div>   
+                    <div class="datosArticle">
+                        <section class="section">
+                            <a><h2 class="aSection1">{{l.name}}</h2></a>
+                            <span class="status">
+                                <span *ngIf="l.status == cosa" class="statusIconLive"></span>
+                                <span *ngIf="l.status == cosa2" class="statusIconDead"></span>
+                                <span *ngIf="l.status == cosa3" class="statusIconUnknow"></span>
+
+
+                                {{l.status}}-{{l.species}}</span>
+                        </section>
+                        <section class="section">
+                            <span>Last Know Location:</span>
+                            <a class="aSection" [href]="l.location.url"> {{l.location.name}}</a>
+                        </section>
+                        <section class="section">
+                            <span>First seen in:</span>
+                            <span>{{l.created.name}}</span>
+                            <a></a>
+                        </section>
+                    </div>          
+                </article>
+            </div>
+        </section>-->
+
+
+
+        <section class="secondSection" *ngIf="episode">
+            <div class="box" >
+                <article class="article" *ngFor="let e of episodes.results">   
+                    <div class="divArticle">
+                        <img class="imgArticle" src="../../../assets/svg/imagesEpisode.jpg">
+                    </div>   
+                    <div class="datosArticle">
+                        <section class="section">
+                            <a><h2 class="aSection1">{{e.name}}</h2></a>
+                            <span class="status">
+                                <span *ngIf="e.id == cosa" class="statusIconLive"></span>
+                                <span *ngIf="e.status == cosa2" class="statusIconDead"></span>
+                                <span *ngIf="e.status == cosa3" class="statusIconUnknow"></span>
+                            </span>
+
+
+                        </section>
+                        <section class="section">
+                            <span>Last Know Location:</span>
+                            <a class="aSection" [href]="e.location"> </a>
+                        </section>
+                        <section class="section">
+                            <span>First seen in:</span>
+                            <span></span>
                             <a></a>
                         </section>
                     </div>          

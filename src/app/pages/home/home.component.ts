@@ -7,20 +7,50 @@ import {ApiService} from '../../service/api.service'
 })
 export class HomeComponent implements OnInit {
 
-  list:any=[];
+  list:object=[];
+  listOfEpisodes:object=[]
   characters:any = []
+  episodes:any = []
   cosa = "Alive";
   cosa2 = "Dead"
   cosa3 = "unknown"
+  location = false;
+  character = true
+  episode = false;
   constructor( private Apiservice : ApiService) {
-    this.list = this.Apiservice.getAllProducts()
+    this.list = this.Apiservice.getAllCharacters()
+    this.listOfEpisodes = this.Apiservice.getAllEpisodes()
    }
 
   ngOnInit(): void {
-    this.Apiservice.getAllProducts()
+    this.Apiservice.getAllCharacters()
     .subscribe(data => {
       this.characters = data
     })
+
+    this.Apiservice.getAllEpisodes()
+    .subscribe(data => {
+      this.episodes = data
+    })
+  }
+
+  showLocationsHome(valor:boolean){
+    this.location= valor;
+    this.character = false
+    this.episode = false
+  }
+
+  showCharactersHome(valor:boolean){
+    this.character = valor
+    this.location = false
+    this.episode = false
+  }
+
+  
+  showEpisodesHome(valor:boolean){
+    this.episode = valor
+    this.location = false
+    this.character = false
   }
 
 }

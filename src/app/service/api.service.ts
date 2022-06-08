@@ -8,7 +8,11 @@ export class ApiService {
 
   constructor(private http: HttpClient ) { }
 
-  getAllProducts(){
+  getAllCharacters(){
     return this.http.get("https://rickandmortyapi.com/api/character")
+  }
+
+  getAllEpisodes(){
+    return this.http.get("https://rickandmortyapi.com/api/episode")
   }
 }
