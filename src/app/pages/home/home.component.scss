@@ -7,7 +7,6 @@
     align-items: center;
     flex-direction: column;
     height: calc(50vh - 60px);
-    text-align: center;
     position: relative;
 }
 
@@ -19,6 +18,8 @@
     font-weight: 900;
     z-index: 1;
     font-size: 5.625rem;
+    text-align: center;
+
 }
 
 
@@ -29,6 +30,6 @@
 }
 
 .imgR{
-    
+    width: 150px;
     fill: rgb(245, 245, 245);
 }
