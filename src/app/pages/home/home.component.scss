@@ -99,3 +99,19 @@
     display: flex;
     flex-direction: column;
 }
+
+@media (max-width:500px){
+
+    .firstSection{
+        height: 100%;
+    }
+
+    .imgR{
+        width: 100%;
+    }
+    .article{
+        flex-direction: column;
+        height: initial;
+        width: 100%;
+    }
+}
