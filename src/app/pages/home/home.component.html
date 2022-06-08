@@ -15,15 +15,15 @@
                         <img class="imgArticle" [src]="l.image">
                     </div>   
                     <div class="datosArticle">
-                        <section>
+                        <section class="section">
                             <a style="color:blue">{{l.name}}</a>
                             <span class="status"> {{l.status}}-{{l.species}}</span>
                         </section>
-                        <section>
-                            <span>Last Know Location</span>
-                            <a> {{l.Location}}</a>
+                        <section class="section">
+                            <span>Last Know Location:</span>
+                            <a [href]="l.location.url"> {{l.location.name}}</a>
                         </section>
-                        <section>
+                        <section class="section">
                             <span>First seen in:</span>
                             <a></a>
                         </section>
