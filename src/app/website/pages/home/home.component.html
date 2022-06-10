@@ -21,12 +21,12 @@
                     </div>   
                     <div class="datosArticle">
                         <section class="section">
-                            <a routerLink="[character, l.id]" style="text-decoration:none"><h2 class="aSection1">{{l.name}}</h2></a>
+                            <a (click)=" onShowCharacterDetail(l.id)"  style="text-decoration:none"><h2 class="aSection1">{{l.name}}</h2></a>
                             <span class="status">
                                 <span *ngIf="l.status == cosa" class="statusIconLive"></span>
                                 <span *ngIf="l.status == cosa2" class="statusIconDead"></span>
                                 <span *ngIf="l.status == cosa3" class="statusIconUnknow"></span>
-
+                                <p>{{l.id}}</p>
 
                                 {{l.status}}-{{l.species}}</span>
                         </section>

@@ -6,12 +6,11 @@ import {HttpClient } from '@angular/common/http'
 })
 export class ApiService {
 
-  private AppiUrl:("https://rickandmortyapi.com/api/character/";
+  private AppiUrl:"https://rickandmortyapi.com/api/character";
 
 
 
-  constructor(private http: HttpClient ) 
-    { }
+  constructor(private http: HttpClient ){ }
 
   getAllCharacters(){
     return this.http.get("https://rickandmortyapi.com/api/character")
@@ -22,6 +21,6 @@ export class ApiService {
   }
 
   getCharacter(id:string){
-    return this.http.get()
+    return this.http.get(`${this.AppiUrl}/${id}`)
   }
 }

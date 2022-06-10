@@ -6,7 +6,7 @@ import {ApiService} from '../../../service/api.service'
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  solo:any = {}
   list:object=[];
   listOfEpisodes:object=[]
   characters:any = []
@@ -51,6 +51,19 @@ export class HomeComponent implements OnInit {
     this.episode = valor
     this.location = false
     this.character = false
+  }
+
+  mostrarId(){
+    console.log("hola", this.solo.id);
+   
+  }
+
+  onShowCharacterDetail(id:string){
+     this.Apiservice.getCharacter(id)
+     .subscribe(data=>{
+      console.log("esta es la ", data)
+     })
+
   }
 
 }
