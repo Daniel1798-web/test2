@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient } from '@angular/common/http'
+import { Character } from '../models/character.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class ApiService {
   constructor(private http: HttpClient ){ }
 
   getAllCharacters(){
-    return this.http.get("https://rickandmortyapi.com/api/character")
+    return this.http.get<Character[]>("https://rickandmortyapi.com/api/character")
   }
 
   getAllEpisodes(){
@@ -21,6 +22,6 @@ export class ApiService {
   }
 
   getCharacter(id:string){
-    return this.http.get(`${this.AppiUrl}/${id}`)
+    return this.http.get<Character>(`https://rickandmortyapi.com/api/character/${id}`)
   }
 }

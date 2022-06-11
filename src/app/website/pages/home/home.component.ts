@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { select } from '@ngrx/store';
 import {ApiService} from '../../../service/api.service'
 @Component({
   selector: 'app-home',
@@ -17,6 +18,11 @@ export class HomeComponent implements OnInit {
   location = false;
   character = true
   episode = false;
+
+  iden:any = {}
+
+  @Output() cosita = new EventEmitter(this.iden)
+
   constructor( private Apiservice : ApiService) {
     this.list = this.Apiservice.getAllCharacters()
     this.listOfEpisodes = this.Apiservice.getAllEpisodes()
@@ -59,10 +65,14 @@ export class HomeComponent implements OnInit {
   }
 
   onShowCharacterDetail(id:string){
+
      this.Apiservice.getCharacter(id)
      .subscribe(data=>{
       console.log("esta es la ", data)
+    this.iden = data
+
      })
+     this.cosita.emit(this.iden)
 
   }
 

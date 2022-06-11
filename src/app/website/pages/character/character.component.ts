@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router'
+import { ActivatedRoute } from '@angular/router'
+import { ApiService } from './../../../service/api.service'
 
 @Component({
   selector: 'app-character',
@@ -7,10 +8,39 @@ import {ActivatedRoute} from '@angular/router'
   styleUrls: ['./character.component.scss']
 })
 export class CharacterComponent implements OnInit {
+  cosa:any = {}
+  b: any = {};
+  constructor(
+    private route: ActivatedRoute,
+    private ApiService: ApiService
+  ) {
+    this.characterId
 
-  constructor( private route : ActivatedRoute) { }
 
-  ngOnInit(): void {
   }
+  ngOnInit() {
+    this.b = this.route.snapshot.params["id"]
+     this.ApiService.getCharacter(this.b)
+    .subscribe(data=>{
+      this.cosa = data
+    })
+
+  }
+
+
+  OnChanges() {
+
+  }
+  characterId(a: any) {
+    return console.log("esto", a)
+  }
+
+  du() {
+    console.log("go")
+    this.characterId(this.b)
+  }
+
+
+
 
 }
