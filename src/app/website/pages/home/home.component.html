@@ -86,7 +86,7 @@
                     </div>   
                     <div class="datosArticle">
                         <section class="section">
-                            <a><h2 class="aSection1">{{e.name}}</h2></a>
+                            <a (click)=" onShowCharacterDetail(e.id)"><h2 class="aSection1">{{e.name}}</h2></a>
                             <span class="status">
                                 <span *ngIf="e.id == cosa" class="statusIconLive"></span>
                                 <span *ngIf="e.status == cosa2" class="statusIconDead"></span>

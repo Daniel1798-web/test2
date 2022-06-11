@@ -17,7 +17,7 @@
         url: string;
     }
 
-    export interface Result {
+    export interface Character {
         id: number;
         name: string;
         status: string;
@@ -32,7 +32,7 @@
         created: Date;
     }
 
-    export interface Character {
+    export interface characterSearch {
         info: Info;
-        results: Result[];
+        results: Character[];
     }

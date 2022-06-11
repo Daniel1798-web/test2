@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
+import { Character } from 'src/app/models/character.model';
 import { ApiService } from './../../../service/api.service'
 
 @Component({
@@ -8,7 +9,7 @@ import { ApiService } from './../../../service/api.service'
   styleUrls: ['./character.component.scss']
 })
 export class CharacterComponent implements OnInit {
-  cosa:any = {}
+  cosa:Character
   b: any = {};
   constructor(
     private route: ActivatedRoute,
