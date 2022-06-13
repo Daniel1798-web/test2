@@ -21,6 +21,11 @@ export class ApiService {
     return this.http.get("https://rickandmortyapi.com/api/episode")
   }
 
+  getAllLocations(){
+    return this.http.get("https://rickandmortyapi.com/api/location")
+
+  }
+
   getOneEpisode(id: string){
     return this.http.get<Episode>(`https://rickandmortyapi.com/api/episode/${id}`)
   }

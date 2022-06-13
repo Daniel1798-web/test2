@@ -79,6 +79,11 @@
         background-color: #202329;
     }
 
+    .divFun:active{
+        box-shadow: 0px;
+
+    }
+
     @media (max-width:500px){
         .divFun{
             width: 90%;

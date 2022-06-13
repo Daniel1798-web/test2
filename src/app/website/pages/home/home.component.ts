@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { select } from '@ngrx/store';
 import {ApiService} from '../../../service/api.service'
 @Component({
   selector: 'app-home',
@@ -10,8 +9,10 @@ export class HomeComponent implements OnInit {
   solo:any = {}
   list:object=[];
   listOfEpisodes:object=[]
+  listOfLocations:object = []
   characters:any = []
   episodes:any = []
+  locations:any = []
   cosa = "Alive";
   cosa2 = "Dead"
   cosa3 = "unknown"
@@ -23,20 +24,26 @@ export class HomeComponent implements OnInit {
 
   @Output() cosita = new EventEmitter(this.iden)
 
-  constructor( private Apiservice : ApiService) {
-    this.list = this.Apiservice.getAllCharacters()
-    this.listOfEpisodes = this.Apiservice.getAllEpisodes()
+  constructor( private apiservice : ApiService) {
+    this.list = this.apiservice.getAllCharacters()
+    this.listOfEpisodes = this.apiservice.getAllEpisodes()
+    this.listOfLocations = this.apiservice.getAllLocations()
    }
 
   ngOnInit(): void {
-    this.Apiservice.getAllCharacters()
+    this.apiservice.getAllCharacters()
     .subscribe(data => {
       this.characters = data
     })
 
-    this.Apiservice.getAllEpisodes()
+    this.apiservice.getAllEpisodes()
     .subscribe(data => {
       this.episodes = data
+    })
+
+    this.apiservice.getAllLocations()
+    .subscribe(data => {
+      this.locations = data
     })
   }
 
@@ -66,7 +73,7 @@ export class HomeComponent implements OnInit {
 
   onShowCharacterDetail(id:string){
 
-     this.Apiservice.getCharacter(id)
+     this.apiservice.getCharacter(id)
      .subscribe(data=>{
       console.log("esta es la ", data)
     this.iden = data
