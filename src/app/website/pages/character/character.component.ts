@@ -11,6 +11,7 @@ import { ApiService } from './../../../service/api.service'
 export class CharacterComponent implements OnInit {
   character:Character
   b: string = "";
+  rutaEpisode = ""
   cosa = "Alive";
   cosa2 = "Dead"
   cosa3 = "unknown"
@@ -23,6 +24,8 @@ export class CharacterComponent implements OnInit {
      this.apiService.getCharacter(this.b)
     .subscribe(data=>{
       this.character = data
+      this.rutaEpisode = this.character.episode[0].slice(32)
+      console.log(this.rutaEpisode)
     })
 
   }

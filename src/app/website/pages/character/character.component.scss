@@ -112,6 +112,17 @@ width: 10px;
 }
 
 
+.aSection1{
+    text-decoration: none;
+    font: 700;
+    color: rgb(255, 255, 255);
+}
+
+.aSection1:hover{
+    color: yellow;
+    cursor: pointer;
+}
+
 @media (max-width: 500px){
     .imgCharacter{
         margin-top: 50px;
