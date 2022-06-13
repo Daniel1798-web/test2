@@ -29,9 +29,9 @@
                 <span class="span1">Sex:</span>
                 <h1 class="name">{{character.gender}}</h1>
                 <span class="span1"> First seen in:</span>
-                <h1 class="name">{{character.origin.name}}</h1>
+                <a class="aSection1" [href]="'../../' + rutaOrigin" ><h1 class="aSection1">{{character.origin.name}}</h1></a>
                 <span class="span1">Last Know Location:</span>
-                <h1 class="name">{{character.location.name}}</h1>
+                <a class="aSection1" [href]="'../../' + rutaLocation"><h1 class="aSection1">{{character.location.name}}</h1></a>
                 <span class="span1">First Episode:</span>
                 <a class="aSection1" [href]="'../../' + rutaEpisode" ><h1  class="aSection1">{{character.episode[0].slice(32)}}</h1></a>
              </section>

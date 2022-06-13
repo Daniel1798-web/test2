@@ -12,6 +12,8 @@ export class CharacterComponent implements OnInit {
   character:Character
   b: string = "";
   rutaEpisode = ""
+  rutaLocation = ""
+  rutaOrigin = ""
   cosa = "Alive";
   cosa2 = "Dead"
   cosa3 = "unknown"
@@ -25,6 +27,9 @@ export class CharacterComponent implements OnInit {
     .subscribe(data=>{
       this.character = data
       this.rutaEpisode = this.character.episode[0].slice(32)
+      this.rutaLocation = this.character.location.url.slice(32)
+      this.rutaOrigin = this.character.origin.url.slice(32)
+
       console.log(this.rutaEpisode)
     })
 
