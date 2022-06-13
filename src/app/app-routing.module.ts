@@ -6,6 +6,9 @@ import {ErrorComponent} from './website/componentes/error/error.component'
 
 import {CharacterComponent} from './website/pages/character/character.component'
 import {EpisodeComponent} from './website/pages/episode/episode.component'
+import {LocationComponent} from './website/pages/location/location.component'
+
+
 
 
 /*{ 
@@ -31,6 +34,11 @@ const routes: Routes = [
     {
       path:'episode/:id',
       component: EpisodeComponent
+    },
+  
+    {
+      path:'location/:id',
+      component: LocationComponent
     },
   
   ]

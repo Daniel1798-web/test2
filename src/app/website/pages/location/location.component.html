@@ -1,0 +1,29 @@
+<div class="dad">
+    <div class="t">  
+        <a [routerLink]="'../../'"><img class="b" title="Back" src="../../../../assets/svg/portal2.png"></a>
+        <span class="span2">Back</span>  
+
+    </div>
+
+    <main class="mainBox">
+        <section class="secEpisode" *ngIf="location">
+            <img class="imgEpisode" src="../../../../assets/svg/mundos.jpg">
+            <h1 class="aSection1">{{location.name}}</h1>
+            <section class="section"> 
+                <span class="span1">Type:</span>
+                <h2 class="section1">{{location.type}}</h2>
+                <span class="span1">Dimenson:</span>
+                <h2 class="section1">{{location.dimension}}</h2>
+                <span class="span1">Residents:</span>
+                <h2 class="section1">{{location.residents.length}}</h2>
+
+
+        </section>
+       
+
+    </section>
+
+
+    </main>
+
+</div>

@@ -12,7 +12,8 @@ import { CharacterComponent } from './website/pages/character/character.componen
 import { HeaderComponent } from './website/componentes/header/header.component';
 import { LayaoutComponent } from './website/componentes/layaout/layaout.component';
 import { ErrorComponent } from './website/componentes/error/error.component';
-import { EpisodeComponent } from './website/pages/episode/episode.component'
+import { EpisodeComponent } from './website/pages/episode/episode.component';
+import { LocationComponent } from './website/pages/location/location.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EpisodeComponent } from './website/pages/episode/episode.component'
     HeaderComponent,
     LayaoutComponent,
     ErrorComponent,
-    EpisodeComponent
+    EpisodeComponent,
+    LocationComponent
   ],
   imports: [
     BrowserModule,
