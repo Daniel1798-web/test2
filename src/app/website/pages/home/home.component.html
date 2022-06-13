@@ -36,7 +36,7 @@
                         </section>
                         <section class="section">
                             <span class="span1">First seen in:</span>
-                            <span>{{l.origin.name}}</span>
+                            <a class="aSection1">{{l.origin.name}}</a>
                             <a></a>
                         </section>
                     </div>          
@@ -85,23 +85,15 @@
                     </div>   
                     <div class="datosArticle">
                         <section class="section">
-                            <a [routerLink]="'episode/'+ e.id"><h2 class="aSection1">{{e.name}}</h2></a>
-                            <span class="status">
-                                <span *ngIf="e.id == cosa" class="statusIconLive"></span>
-                                <span *ngIf="e.status == cosa2" class="statusIconDead"></span>
-                                <span *ngIf="e.status == cosa3" class="statusIconUnknow"></span>
-                            </span>
-
-
+                            <a class="aSection1" [routerLink]="'episode/'+ e.id"><h2 class="aSection1">{{e.name}}</h2></a>
                         </section>
                         <section class="section">
-                            <span>Last Know Location:</span>
-                            <a class="aSection" [href]="e.location"> </a>
+                            <span class="span1">Air Date:</span>
+                            <a class="aSection2" [href]="e.location"> {{e.air_date}} </a>
                         </section>
                         <section class="section">
-                            <span>First seen in:</span>
-                            <span></span>
-                            <a></a>
+                            <span class="span1">Episode:</span>
+                            <a class="aSection2">{{e.episode}}</a>
                         </section>
                     </div>          
                 </article>

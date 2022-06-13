@@ -1,6 +1,27 @@
-<p>episode works!</p>
-<h1 >{{episode.name}}</h1>
-<div>
-    <h1 >yeee</h1>
 
+<div class="dad">
+    <div class="t">  
+        <a [routerLink]="'../../'"><img class="b" title="Back" src="../../../../assets/svg/portal2.png"></a>
+        <span class="span2">Back</span>  
+
+    </div>
+
+    <main class="mainBox">
+        <section class="secEpisode" *ngIf="episode">
+            <img class="imgEpisode" src="../../../../assets/svg/imagesEpisode.jpg">
+            <h1 class="aSection1">{{episode.name}}</h1>
+            <section class="section"> 
+                <span class="span1">Air date:</span>
+                <h2 class="section1">{{episode.air_date}}</h2>
+                <span class="span1">Episode:</span>
+                <h2 class="section1">{{episode.episode}}</h2>
+                <span class="span1">Characters:</span>
+                <h2 class="section1">{{episode.characters.length}}</h2>
+        </section>
+
+        
+    </section>
+
+
+    </main>
 </div>
