@@ -16,6 +16,7 @@ export class EpisodeComponent implements OnInit {
     ){ }
   identificacion:string = ""
   episode:Episode
+  rutaYoutube:string = "https://www.youtube.com/watch?v=dK3fVf5U8DM"
 
 
   ngOnInit(): void {

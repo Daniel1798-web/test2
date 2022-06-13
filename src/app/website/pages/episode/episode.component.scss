@@ -69,3 +69,18 @@
         margin: 0px;
         padding: 0px;
     }
+
+    .divFun{
+        display: flex;
+        width: 500px;
+        justify-content: center;
+        margin-top: 20px;
+        box-shadow: 0px -1px 7px #667663;
+        background-color: #202329;
+    }
+
+    @media (max-width:500px){
+        .divFun{
+            width: 90%;
+        }
+    }
