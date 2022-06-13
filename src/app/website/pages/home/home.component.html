@@ -21,23 +21,22 @@
                     </div>   
                     <div class="datosArticle">
                         <section class="section">
-                            <a (click)=" onShowCharacterDetail(l.id)"   [routerLink]="'character/'+ l.id" 
+                            <a [routerLink]="'character/'+ l.id" 
                             style="text-decoration:none"><h2 class="aSection1">{{l.name}}</h2></a>
                             <span class="status">
                                 <span *ngIf="l.status == cosa" class="statusIconLive"></span>
                                 <span *ngIf="l.status == cosa2" class="statusIconDead"></span>
                                 <span *ngIf="l.status == cosa3" class="statusIconUnknow"></span>
-                                <p>{{l.id}}</p>
 
                                 {{l.status}}-{{l.species}}</span>
                         </section>
                         <section class="section">
-                            <span>Last Know Location:</span>
+                            <span class="span1">Last Know Location:</span>
                             <a class="aSection" [href]="l.location.url"> {{l.location.name}}</a>
                         </section>
                         <section class="section">
-                            <span>First seen in:</span>
-                            <span>{{l.created.name}}</span>
+                            <span class="span1">First seen in:</span>
+                            <span>{{l.origin.name}}</span>
                             <a></a>
                         </section>
                     </div>          
@@ -86,7 +85,7 @@
                     </div>   
                     <div class="datosArticle">
                         <section class="section">
-                            <a (click)=" onShowCharacterDetail(e.id)"><h2 class="aSection1">{{e.name}}</h2></a>
+                            <a [routerLink]="'episode/'+ e.id"><h2 class="aSection1">{{e.name}}</h2></a>
                             <span class="status">
                                 <span *ngIf="e.id == cosa" class="statusIconLive"></span>
                                 <span *ngIf="e.status == cosa2" class="statusIconDead"></span>

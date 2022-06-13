@@ -1,5 +1,25 @@
-<p>character works!</p>
-<p *ngIf="cosa">{{cosa.id}}</p>
-<p>{{cosa.name}}</p>
-<button (click)="du()">cl</button>
-<app-home style="display:none" (cosita)="characterId($event)"></app-home>
+
+
+
+<div class="dad">
+    <main class="mainBox">
+        <section class="secCharacter" *ngIf="character">
+            <img class="imgCharacter" [src]="character.image">
+            <h1 class="name">{{character.name}}</h1>
+            <section class="section">
+            <span class="status">
+                                <span *ngIf="character.status == cosa" class="statusIconLive"></span>
+                                <span *ngIf="character.status == cosa2" class="statusIconDead"></span>
+                                <span *ngIf="character.status == cosa3" class="statusIconUnknow"></span>
+
+                                {{character.status}}-{{character.species}}</span>
+            </section>
+            <section>
+            <h1 class="name">{{character.location.name}}</h1>
+            <h1 class="name">{{character.origin.name}}</h1>
+            </section>
+
+        </section>
+
+    </main>
+</div>

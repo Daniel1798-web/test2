@@ -1,10 +1,14 @@
 
 html{
-    overflow: auto
+    overflow: auto;
+    background-color: rgb(32, 35, 41);
+
+}
+
+body{
+    background-color: rgb(32, 35, 41);
+
 }
 
 @import '~bootstrap/scss/bootstrap';
 
-body{
-    background-color: rgb(32, 35, 41);
-}

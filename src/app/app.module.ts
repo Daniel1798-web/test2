@@ -11,7 +11,8 @@ import { HomeComponent } from './website/pages/home/home.component';
 import { CharacterComponent } from './website/pages/character/character.component';
 import { HeaderComponent } from './website/componentes/header/header.component';
 import { LayaoutComponent } from './website/componentes/layaout/layaout.component';
-import { ErrorComponent } from './website/componentes/error/error.component'
+import { ErrorComponent } from './website/componentes/error/error.component';
+import { EpisodeComponent } from './website/pages/episode/episode.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ErrorComponent } from './website/componentes/error/error.component'
     CharacterComponent,
     HeaderComponent,
     LayaoutComponent,
-    ErrorComponent
+    ErrorComponent,
+    EpisodeComponent
   ],
   imports: [
     BrowserModule,

@@ -9,21 +9,20 @@ import { ApiService } from './../../../service/api.service'
   styleUrls: ['./character.component.scss']
 })
 export class CharacterComponent implements OnInit {
-  cosa:Character
-  b: any = {};
+  character:Character
+  b: string = "";
+  cosa = "Alive";
+  cosa2 = "Dead"
+  cosa3 = "unknown"
   constructor(
     private route: ActivatedRoute,
-    private ApiService: ApiService
-  ) {
-    this.characterId
-
-
-  }
+    private apiService: ApiService
+  ) { }
   ngOnInit() {
     this.b = this.route.snapshot.params["id"]
-     this.ApiService.getCharacter(this.b)
+     this.apiService.getCharacter(this.b)
     .subscribe(data=>{
-      this.cosa = data
+      this.character = data
     })
 
   }

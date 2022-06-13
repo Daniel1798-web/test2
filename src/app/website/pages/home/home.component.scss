@@ -108,6 +108,10 @@
     justify-content: center;
 }
 
+.span1{
+    color: rgb(158, 158, 158);
+}
+
 .status{
     display: flex;
     -webkit-box-align: center;
@@ -169,8 +173,13 @@
         height: 100%;
     }
 
+    .divImg{
+        text-align: start;
+        margin-top: 50%;
+    }
+
     .imgR{
-        width: 100%;
+        width: 150px;
     }
     .article{
         flex-direction: column;
