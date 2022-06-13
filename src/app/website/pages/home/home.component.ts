@@ -64,6 +64,7 @@ export class HomeComponent implements OnInit {
     this.episode = valor
     this.location = false
     this.character = false
+    
   }
 
   mostrarId(){

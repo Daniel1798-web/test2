@@ -25,6 +25,10 @@ export class HeaderComponent implements OnInit {
       this.locations.emit(this.location)
       this.character = false
       this.episode = false
+      if(this.location = false){
+        return   this.locations.emit(this.character)
+
+      }
     }
 
     showCharacter(){
@@ -32,6 +36,10 @@ export class HeaderComponent implements OnInit {
       this.characters.emit(this.character)
       this.location = false
       this.episode = false
+      if(this.character = false){
+        return   this.characters.emit(this.character)
+
+      }
     }
 
     showEpisodes(){
@@ -39,5 +47,8 @@ export class HeaderComponent implements OnInit {
       this.episodes.emit(this.episode)
       this.location = false
       this.character = false
-    }
+      if(this.episode = false){
+        return   this.episodes.emit(this.character)
+
+      }    }
 }
