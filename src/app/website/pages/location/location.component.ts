@@ -15,6 +15,9 @@ export class LocationComponent implements OnInit {
 
   idLocation:string="";
   location
+  cosa = "Alive";
+  cosa2 = "Dead"
+  cosa3 = "unknown"
 
   ngOnInit(): void {
     this.idLocation = this.route.snapshot.params["id"]
