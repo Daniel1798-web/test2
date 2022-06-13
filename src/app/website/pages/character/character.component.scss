@@ -78,6 +78,18 @@ p{
 
 }
 
+.t{
+color: #202329;
+}
+
+.b{
+    width: 80px;
+    height: 80px;
+    float: left;
+    margin: 0px;
+    padding: 0px;
+}
+
 .statusIconUnknow{
     display: flex;
     height: 0.5rem;
@@ -87,6 +99,10 @@ p{
     border-radius: 50%;
     margin-top: 8px;
 
+}
+
+.span1{
+    color: rgb(158, 158, 158);
 }
 
 

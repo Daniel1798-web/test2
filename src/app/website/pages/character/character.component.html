@@ -1,25 +1,40 @@
 
 
-
+ <div class="t">    
+    <a [routerLink]="'../../'"><img class="b" src="../../../../assets/svg/portal2.png"></a>
+</div>
 <div class="dad">
+   
+
     <main class="mainBox">
+
         <section class="secCharacter" *ngIf="character">
+
+
             <img class="imgCharacter" [src]="character.image">
             <h1 class="name">{{character.name}}</h1>
             <section class="section">
             <span class="status">
-                                <span *ngIf="character.status == cosa" class="statusIconLive"></span>
-                                <span *ngIf="character.status == cosa2" class="statusIconDead"></span>
-                                <span *ngIf="character.status == cosa3" class="statusIconUnknow"></span>
+                <span *ngIf="character.status == cosa" class="statusIconLive"></span>
+                <span *ngIf="character.status == cosa2" class="statusIconDead"></span>
+                <span *ngIf="character.status == cosa3" class="statusIconUnknow"></span>
+                    
+                {{character.status}}-{{character.species}}</span>
 
-                                {{character.status}}-{{character.species}}</span>
             </section>
+        
             <section>
-            <h1 class="name">{{character.location.name}}</h1>
-            <h1 class="name">{{character.origin.name}}</h1>
+                <span class="span1">Sex:</span>
+                <h1 class="name">{{character.gender}}</h1>
+                <span class="span1"> First seen in:</span>
+                <h1 class="name">{{character.origin.name}}</h1>
+                <span class="span1">Last Know Location:</span>
+                <h1 class="name">{{character.location.name}}</h1>
+                <span class="span1">First Episode:</span>
+                <a [href]="'../../episode/' + character.id" ><h1 class="name"></h1></a>
+             </section>
             </section>
 
-        </section>
 
     </main>
 </div>
