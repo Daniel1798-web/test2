@@ -20,10 +20,11 @@
 
         </section>
 
-        <!--<section class="secondSection" *ngIf="location.residents">
-            <div class="box" >
-                <article class="article" *ngFor="let l of location.residents">   
-                    <div class="divArticle">
+        <section class="secondSection" *ngIf="location.residents">
+            <div class="box" *ngFor="let r of solo">
+                <article class="article"  *ngFor="let l of character.results">  
+                    <div *ngIf="l.url == r"> 
+                    <div class="divArticle"  >
                         <img class="imgArticle" [src]="l.image">
                     </div>   
                     <div class="datosArticle">
@@ -39,17 +40,18 @@
                         </section>
                         <section class="section">
                             <span class="span1">Last Know Location:</span>
-                            <a class="aSection" [href]="l.location.url"> {{l.location.name}}</a>
+                            <a class="aSection1"> {{l.location.name}}</a>
                         </section>
                         <section class="section">
                             <span class="span1">First seen in:</span>
                             <a class="aSection1">{{l.origin.name}}</a>
                             <a></a>
                         </section>
-                    </div>          
+                    </div>    
+                    </div>      
                 </article>
             </div>
-        </section>-->
+        </section>
 
     </section>
 

@@ -85,6 +85,38 @@
 
     }
 
+    .status{
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        text-transform: capitalize;
+        color: white;
+    }
+    
+    .statusIconLive{
+        height: 0.5rem;
+        width: 0.5rem;
+        margin-right: 0.375rem;
+        background: rgb(0, 255, 13);
+        border-radius: 50%;
+    }
+    
+    .statusIconDead{
+        height: 0.5rem;
+        width: 0.5rem;
+        margin-right: 0.375rem;
+        background: rgb(255, 0, 0);
+        border-radius: 50%;
+    }
+    
+    .statusIconUnknow{
+        height: 0.5rem;
+        width: 0.5rem;
+        margin-right: 0.375rem;
+        background: rgb(238, 255, 0);
+        border-radius: 50%;
+    }
+
     @media (max-width:500px){
         .divFun{
             width: 90%;
