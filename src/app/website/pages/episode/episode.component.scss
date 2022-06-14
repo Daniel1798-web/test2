@@ -83,6 +83,98 @@
         box-shadow: 0px;
 
     }
+    
+    .status{
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        text-transform: capitalize;
+        color: white;
+    }
+    
+    .statusIconLive{
+        height: 0.5rem;
+        width: 0.5rem;
+        margin-right: 0.375rem;
+        background: rgb(0, 255, 13);
+        border-radius: 50%;
+    }
+    
+    .statusIconDead{
+        height: 0.5rem;
+        width: 0.5rem;
+        margin-right: 0.375rem;
+        background: rgb(255, 0, 0);
+        border-radius: 50%;
+    }
+    
+    .statusIconUnknow{
+        height: 0.5rem;
+        width: 0.5rem;
+        margin-right: 0.375rem;
+        background: rgb(238, 255, 0);
+        border-radius: 50%;
+    }
+
+    
+    
+    .divArticle{
+        width: 100%;
+        flex:2 1 0%;
+    }
+    
+    .imgArticle{
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        margin: 0px;
+        transition: opacity 0.5s ease 0s;
+        object-position: center center;
+    }
+    
+    .datosArticle{
+        flex: 3 1 0%;
+        position: relative;
+        padding: 0.75rem;
+        color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .box{
+        display: flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        align-items: center;
+        flex-wrap: wrap;
+        max-width: 1920px;
+    
+    }
+
+    .article{
+        width: 600px;
+        height: 220px;
+        display: flex;
+        overflow: hidden;
+        background: rgb(60, 62, 68);
+        border-radius: 0.5rem;
+        margin: 0.75rem;
+        box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px, rgb(0 0 0 / 6%) 0px 2px 4px -1px;
+    }
+
+    .secondSection{
+        display: flex;
+        flex-direction: column;
+         -webkit-box-pack: center;
+         justify-content: center;
+         -webkit-box-align: center;
+         align-items: center;
+         padding: 4.5rem 0px;
+         background: rgb(32, 35, 41);
+         min-height: calc(50vh - 60px);
+     }
+     
 
     @media (max-width:500px){
         .divFun{

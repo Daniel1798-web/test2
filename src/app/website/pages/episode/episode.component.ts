@@ -17,13 +17,23 @@ export class EpisodeComponent implements OnInit {
   identificacion:string = ""
   episode:Episode
   rutaYoutube:string = "https://www.youtube.com/watch?v=dK3fVf5U8DM"
-
+  character
+  solo
+  cosa = "Alive";
+  cosa2 = "Dead"
+  cosa3 = "unknown"
 
   ngOnInit(): void {
     this.identificacion = this.route.snapshot.params["id"]
     this.apiService.getOneEpisode(this.identificacion)
     .subscribe(data=>{
       this.episode = data
+      this.solo = this.episode.characters
+    })
+
+    this.apiService.getAllCharacters()
+    .subscribe(data=>{
+      this.character = data
     })
   }
 

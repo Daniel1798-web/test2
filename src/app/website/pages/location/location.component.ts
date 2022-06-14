@@ -38,7 +38,6 @@ export class LocationComponent implements OnInit {
     this.apiService.getAllCharacters()
     .subscribe(data=>{
       this.character = data
-      
     })
     this.fors()
 
@@ -47,9 +46,16 @@ export class LocationComponent implements OnInit {
 
   fors(){
     for(let i:any = 0; i < this.solo.length; i++){
-      i = this.solo
-      console.log(i)
+      this.solo = i
+   
       }
+    }
+
+    fors2(){
+      for(let i:any = 0; i < this.solo.length; i++){
+        i = this.solo
+        console.log(i)
+        }
     }
 
   }
