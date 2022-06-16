@@ -19,10 +19,14 @@ export class HomeComponent implements OnInit {
   location = false;
   character = true
   episode = false;
-
+  searchingPanel = false
+  things=[]
+  reading = ""
+ai = ""
   iden:any = {}
 
   @Output() cosita = new EventEmitter(this.iden)
+  
 
   constructor( private apiservice : ApiService) {
     this.list = this.apiservice.getAllCharacters()
@@ -45,18 +49,24 @@ export class HomeComponent implements OnInit {
     .subscribe(data => {
       this.locations = data
     })
+
+    this.readSearching(this.ai)
+    
   }
 
   showLocationsHome(valor:boolean){
     this.location= valor;
     this.character = false
     this.episode = false
+    this.searchingPanel = false
+    
   }
 
   showCharactersHome(valor:boolean){
     this.character = valor
     this.location = false
     this.episode = false
+    this.searchingPanel = false
   }
 
   
@@ -64,6 +74,7 @@ export class HomeComponent implements OnInit {
     this.episode = valor
     this.location = false
     this.character = false
+    this.searchingPanel = false
     
   }
 
@@ -82,6 +93,20 @@ export class HomeComponent implements OnInit {
      })
      this.cosita.emit(this.iden)
 
+  }
+
+
+  showSearching(a: boolean){
+    this.searchingPanel = a
+  }
+
+  readSearching(a){
+      this.reading = a
+      this.ai = a
+  }
+
+  loadReading(){
+    
   }
 
 }

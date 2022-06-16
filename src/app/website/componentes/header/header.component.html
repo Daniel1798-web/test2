@@ -1,9 +1,16 @@
 
 
-<div class="header">
-    <nav class="header-son">
+<div class="header" >
+    <nav  class="header-son">
         <a class="logo"><img class="logoImg" src="../../../assets/svg/logo.png"></a>
         <ul class="links">
+            <li class="li1Search" (click)="show()" [class.active]="activeSearch2">B</li>
+            <div class="divSearch">
+                <a class="lupa" (click)="show2()" [class.active]="activeSearch">X</a>
+                <a class="lupa" [class.active]="activeSearch"><img src="../../../../assets/svg/lupa.png"></a>
+                <input class="li2" [class.active]="activeSearch" [(ngModel)]="ss">
+            </div>
+
             <li class="li1" (click)="showCharacter()">Characters</li>
             <li class="li1" (click)="showLocations()">Location</li>
             <li class="li1" (click)="showEpisodes()">Episode</li>

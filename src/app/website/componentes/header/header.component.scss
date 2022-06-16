@@ -41,6 +41,20 @@
         
     }
 
+    .li1Search{
+        display: none;
+        margin-right: 1.75rem;
+        font-weight: 700;
+        &.active{
+            display: flex;
+        }
+    }
+
+    .li1Search:hover{
+        color: yellow;
+        cursor: pointer;
+    }
+
     .li1{
         margin-right: 1.75rem;
         font-weight: 700;
@@ -50,3 +64,40 @@
         color: yellow;
         cursor: pointer;
     }
+
+    .divSearch{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .li2{
+        display: none;
+        margin-right: 1.75rem;
+        font-weight: 700;
+        transform: translateX(-100%);
+        transition: all ease-out .5s;
+        width: 150px;
+        &.active{
+            transform: translateX(0);
+            transition: all ease-out .2s;
+            display: flex;
+            margin: 1px;
+
+        }
+    }
+
+    .lupa{
+        display: none;
+        &.active{
+            display: flex;
+            margin: 1px;
+        }
+    }
+
+
+    .li2{
+        color: yellow;
+        cursor: pointer;
+    }
+
+    

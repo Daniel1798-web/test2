@@ -4,17 +4,28 @@
     (locations)="showLocationsHome($event)"
     (characters)="showCharactersHome($event)"
     (episodes)="showEpisodesHome($event)"
+    (searching)="showSearching($event)"
+    (write)="readSearching($event)"
     >
 </app-header>
     <main>
+
         <section class="firstSection">
             <h1 class="title">The Rick and Morty Test</h1>
             <div class="divImg">
                 <img  src="../../../assets/svg/rick.jpg" class="imgR">
             </div>
         </section>
+
+
+        <section class="secondSection" *ngIf="searchingPanel">
+            <h1 style="color: white;" *ngIf="things.length === 0">search your favorite Character, Location or Episode</h1>
+            <div *ngFor="let i of things">i</div>
+        </section>
+
         <section class="secondSection" *ngIf="character ">
             <div class="box" >
+
                 <article class="article" *ngFor="let l of characters.results">   
                     <div class="divArticle">
                         <img class="imgArticle" [src]="l.image">
