@@ -21,6 +21,7 @@
         <section class="secondSection" *ngIf="searchingPanel">
             <h1 style="color: white;" *ngIf="things.length === 0">search your favorite Character, Location or Episode</h1>
             <div *ngFor="let i of things">i</div>
+            <div *ngFor="let e of characters.result"><p style="color: white;" (click)="filtrar(e)">{{e.name}}</p></div>
         </section>
 
         <section class="secondSection" *ngIf="character ">

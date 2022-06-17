@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
   searchingPanel = false
   things=[]
   reading = ""
-ai = ""
   iden:any = {}
 
   @Output() cosita = new EventEmitter(this.iden)
@@ -50,7 +49,6 @@ ai = ""
       this.locations = data
     })
 
-    this.readSearching(this.ai)
     
   }
 
@@ -102,11 +100,13 @@ ai = ""
 
   readSearching(a){
       this.reading = a
-      this.ai = a
+     
   }
 
-  loadReading(){
-    
+  filtrar(f){
+    let ta = this.characters.results[f].name.filter(cha => this.characters.results.name == this.reading)
+    console.log(ta)
   }
 
+ 
 }

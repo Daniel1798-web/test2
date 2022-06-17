@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
 
 
   ngOnInit(): void {
-      this.write.emit(this.ss)
+    this.sendText()
   }
 
     show(){
@@ -79,4 +79,10 @@ export class HeaderComponent implements OnInit {
         return   this.episodes.emit(this.character)
 
       }    }
+
+
+      sendText(){
+        this.write.emit(this.ss)
+        
+      }
 }
