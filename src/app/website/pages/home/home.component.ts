@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
   things=[]
   reading = ""
   iden:any = {}
+  character2
 
   @Output() cosita = new EventEmitter(this.iden)
   
@@ -37,6 +38,7 @@ export class HomeComponent implements OnInit {
     this.apiservice.getAllCharacters()
     .subscribe(data => {
       this.characters = data
+      this.character2 = this.characters.results
     })
 
     this.apiservice.getAllEpisodes()
@@ -104,8 +106,10 @@ export class HomeComponent implements OnInit {
   }
 
   filtrar(f){
-    let ta = this.characters.results[f].name.filter(cha => this.characters.results.name == this.reading)
-    console.log(ta)
+    this.reading = f
+    this.character2.name
+    return console.log("esto" + this.character2.name)
+
   }
 
  

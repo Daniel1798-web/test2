@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.sendText()
+    //this.sendText()
   }
 
     show(){
