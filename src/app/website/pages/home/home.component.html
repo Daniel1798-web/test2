@@ -17,12 +17,11 @@
             </div>
         </section>
 
-
         <section class="secondSection" *ngIf="searchingPanel">
             <h1 style="color: white;" *ngIf="reading.length === 0">search your favorite Character, Location or Episode</h1>
-            <div *ngFor="let f of characters.results">
-                <div *ngIf="f.name == reading">
-                    <p style="color: white;">{{f.name}}</p>
+            <div *ngFor="let f of todo">
+                <div *ngIf="textFilter == reading ">
+                    <p [routerLink]="'character/'+ f.id " style="color: white;">{{f.name}}</p>
                 </div>
             </div>
         </section>

@@ -23,7 +23,12 @@ export class HomeComponent implements OnInit {
   things=[]
   reading = ""
   iden:any = {}
-  character2
+  characters2
+  episodes2
+  locations2
+  textFilter = ""
+  todo=[]
+  todo2=[]
 
   @Output() cosita = new EventEmitter(this.iden)
   
@@ -35,20 +40,34 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit(): void {
+
     this.apiservice.getAllCharacters()
     .subscribe(data => {
       this.characters = data
-      this.character2 = this.characters.results
+      this.characters2 = this.characters.results
+      for(let i = 0; i < this.characters2.length; i++){
+        this.todo.push(this.characters2[i])
+      }
+      
+
     })
 
     this.apiservice.getAllEpisodes()
     .subscribe(data => {
       this.episodes = data
+      this.episodes2 = this.episodes.results
+      for(let i = 0; i < this.episodes2.length; i++){
+        this.todo.push(this.episodes2[i])
+      }
     })
 
     this.apiservice.getAllLocations()
     .subscribe(data => {
       this.locations = data
+      this.locations2 = this.locations.results
+      for(let i = 0; i < this.locations2.length; i++){
+        this.todo.push(this.locations2[i])
+      }
     })
 
     
@@ -98,18 +117,39 @@ export class HomeComponent implements OnInit {
 
   showSearching(a: boolean){
     this.searchingPanel = a
+    this.episode = false
+    this.location = false
+    this.character = false
   }
 
-  readSearching(a){
-      this.reading = a
+  readSearching(){
+    for(let i = 0; i < 60 ; i++){
+      this.textFilter = this.todo[i].name.replace(/ /g, "").toLowerCase()
+      return console.log(this.todo[i].name.replace(/ /g, "").toLowerCase())
+      }
+    
+
      
   }
 
   filtrar(f){
-    this.reading = f
-    this.character2.name
-    return console.log("esto" + this.character2.name)
+    this.reading = f.replace(/ /g, "").toLowerCase()
+    console.log(this.reading)
+    for(let i = 0; i < 60 ; i++){
+      this.todo[i].name.replace(/ /g, "").toLowerCase()
 
+      if(this.todo[i].name.replace(/ /g, "").toLowerCase() === this.reading){
+        this.todo2.push(this.todo[i])
+       return console.log(this.todo2[i].name + "ad")
+      }else{
+        return console.log("error")
+      }
+     
+     // console.log(this.todo[i].name.replace(/ /g, "").toLowerCase())
+      }
+
+  
+  
   }
 
  
