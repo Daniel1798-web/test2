@@ -77,11 +77,13 @@
         transform: translateX(-100%);
         transition: all ease-out .5s;
         width: 150px;
+        color: black;
         &.active{
             transform: translateX(0);
             transition: all ease-out .2s;
             display: flex;
             margin: 1px;
+            color: black;
 
         }
     }

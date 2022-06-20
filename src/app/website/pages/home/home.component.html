@@ -18,15 +18,15 @@
         </section>
 
         <section class="secondSection" *ngIf="searchingPanel">
-            <h1 style="color: white;" *ngIf="reading.length === 0">search your favorite Character, Location or Episode</h1>
-            <div *ngFor="let f of todo">
-                <div *ngIf="textFilter == reading ">
+            <h1 style="color: white;" *ngIf="reading.length === 0 && todo2.length < 1">search your favorite Character, Location or Episode</h1>
+            <div *ngFor="let f of todo2">
+                <div >
                     <p [routerLink]="'character/'+ f.id " style="color: white;">{{f.name}}</p>
                 </div>
             </div>
         </section>
 
-        <section class="secondSection" *ngIf="character ">
+        <section class="secondSection" *ngIf="character">
             <div class="box" >
 
                 <article class="article" *ngFor="let l of characters.results">   

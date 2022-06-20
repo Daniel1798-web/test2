@@ -29,6 +29,7 @@ export class HomeComponent implements OnInit {
   textFilter = ""
   todo=[]
   todo2=[]
+  arr = []
 
   @Output() cosita = new EventEmitter(this.iden)
   
@@ -69,7 +70,7 @@ export class HomeComponent implements OnInit {
         this.todo.push(this.locations2[i])
       }
     })
-
+this.arr.push(this.todo)
     
   }
 
@@ -120,6 +121,7 @@ export class HomeComponent implements OnInit {
     this.episode = false
     this.location = false
     this.character = false
+    
   }
 
   readSearching(){
@@ -133,15 +135,30 @@ export class HomeComponent implements OnInit {
   }
 
   filtrar(f){
-    this.reading = f.replace(/ /g, "").toLowerCase()
+    this.reading = f.toLowerCase().split('')
     console.log(this.reading)
     for(let i = 0; i < 60 ; i++){
-      this.todo[i].name.replace(/ /g, "").toLowerCase()
+     var te = []
+      this.todo[i].name.toLowerCase().split('')
+     console.log(te)
 
-      if(this.todo[i].name.replace(/ /g, "").toLowerCase() === this.reading){
+     te.push(this.todo[i])
+
+      for(let e = 0; e < this.reading.length; e++){ 
+
+      if(this.arr[0].name === this.reading[e]){
+        this.todo2.push(this.arr[i])
+       return console.log(this.arr[i] + " " + this.reading)
+      
+      }/*if(this.todo[i].name.replace(/ /g, "").toLowerCase().split('')  === this.reading){
         this.todo2.push(this.todo[i])
-       return console.log(this.todo2[i].name + "ad")
-      }else{
+
+        return console.log(this.todo2[i].name)
+
+      }*/
+      /*if(this.reading.length === 0){
+        this.todo2.length = 0
+      }*/else{
         return console.log("error")
       }
      
@@ -149,7 +166,7 @@ export class HomeComponent implements OnInit {
       }
 
   
-  
+    }
   }
 
  
