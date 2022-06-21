@@ -129,6 +129,11 @@ export class HomeComponent implements OnInit {
     
   }
 
+  closeSearching(a:boolean){
+    this.searchingPanel = a
+    this.character = true
+  }
+
   readSearching(){
     for(let i = 0; i < 60 ; i++){
       this.textFilter = this.todo[i].name.replace(/ /g, "").toLowerCase()

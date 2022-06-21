@@ -20,6 +20,7 @@ export class HeaderComponent implements OnInit {
   @Output() characters = new EventEmitter<boolean>()
   @Output() episodes = new EventEmitter<boolean>()
   @Output() searching = new EventEmitter<boolean>()
+  @Output() searching2 = new EventEmitter<boolean>()
   @Output() write = new EventEmitter()
 
 
@@ -38,7 +39,7 @@ export class HeaderComponent implements OnInit {
     {
       this.activeSearch2 = true
       this.activeSearch = false
-      this.searching.emit(this.activeSearch)
+      this.searching2.emit(false)
     }
     
 

@@ -43,11 +43,12 @@
 
     .li1Search{
         display: none;
-        margin-right: 1.75rem;
+        margin-right: 1.1rem;
         font-weight: 700;
         &.active{
             display: flex;
         }
+        
     }
 
     .li1Search:hover{
@@ -72,26 +73,31 @@
 
     .li2{
         display: none;
-        margin-right: 1.75rem;
         font-weight: 700;
         transform: translateX(-100%);
         transition: all ease-out .5s;
         width: 150px;
         color: black;
         &.active{
+            animation-duration: .5s;
+            animation-name: slide;
+            animation-iteration-count: 1;
             transform: translateX(0);
-            transition: all ease-out .2s;
+            transition: all ease-out 5s;
             display: flex;
-            margin: 1px;
             color: black;
+            width: 100%;
+            border-radius: 10px;
+            margin-right: 2px;
 
         }
     }
 
+    @keyframes slide{0%{transform:translateX(100%)}  100%{transform: translateX(0);}}
+
     .lupa{
-        display: none;
         &.active{
-            display: flex;
+            display: none;
             margin: 1px;
         }
     }
@@ -103,3 +109,26 @@
     }
 
     
+@media(max-width:500px){
+    .li2{
+        display: none;
+        font-weight: 700;
+        transform: translateX(-100%);
+        transition: all ease-out .5s;
+        width: 150px;
+        color: black;
+        &.active{
+            animation-duration: .5s;
+            animation-name: slide;
+            animation-iteration-count: 1;
+            transform: translateX(0);
+            transition: all ease-out 5s;
+            display: flex;
+            color: black;
+            width: 100%;
+            border-radius: 10px;
+            margin-right: 2px;
+
+        }
+    }
+}

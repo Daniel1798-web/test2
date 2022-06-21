@@ -4,10 +4,10 @@
     <nav  class="header-son">
         <a class="logo"><img class="logoImg" src="../../../assets/svg/logo.png"></a>
         <ul class="links">
-            <li class="li1Search" (click)="show()" [class.active]="activeSearch2">B</li>
+            <li class="li1Search" (click)="show()" [class.active]="activeSearch2" ><a  ><img src="../../../../assets/svg/lupa.png"></a></li>
             <div class="divSearch">
-                <a class="lupa" (click)="show2()" [class.active]="activeSearch">X</a>
-                <a class="lupa" [class.active]="activeSearch"><img src="../../../../assets/svg/lupa.png"></a>
+                <a class="lupa" [class.active]="activeSearch2" (click)="show2()" ><img src="../../../../assets/svg/lupa.png"></a>
+
                 <input class="li2" spellcheck="false" autocomplete="none" (input)="sendText()" [class.active]="activeSearch" [(ngModel)]="ss">
             </div>
 
