@@ -47,6 +47,7 @@ export class HomeComponent implements OnInit {
       this.characters = data
       this.characters2 = this.characters.results
       for(let i = 0; i < this.characters2.length; i++){
+        this.characters2[i].locacion = 'character/'
         this.todo.push(this.characters2[i])
       }
       
@@ -58,6 +59,8 @@ export class HomeComponent implements OnInit {
       this.episodes = data
       this.episodes2 = this.episodes.results
       for(let i = 0; i < this.episodes2.length; i++){
+        this.episodes2[i].locacion = 'episode/'
+        this.episodes2[i].image ='../../../assets/svg/imagesEpisode.jpg'
         this.todo.push(this.episodes2[i])
       }
     })
@@ -66,7 +69,10 @@ export class HomeComponent implements OnInit {
     .subscribe(data => {
       this.locations = data
       this.locations2 = this.locations.results
+
       for(let i = 0; i < this.locations2.length; i++){
+        this.locations2[i].locacion ='location/'
+        this.locations2[i].image = '../../../../assets/svg/mundos.jpg'
         this.todo.push(this.locations2[i])
       }
     })

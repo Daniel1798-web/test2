@@ -28,7 +28,7 @@
                     </div>
                     <div class="datosArticle">
                         <section class="section">
-                            <a [routerLink]="'character/'+ f.id" 
+                            <a [routerLink]=" f.locacion + f.id" 
                             style="text-decoration:none"><h1 class="aSection1">{{f.name}}</h1></a>
                             <span class="status">
                                 <span *ngIf="f.status == cosa" class="statusIconLive"></span>
