@@ -4,16 +4,16 @@
     <nav  class="header-son">
         <a class="logo"><img class="logoImg" src="../../../assets/svg/logo.png"></a>
         <ul class="links">
-            <li class="li1Search" (click)="show()" [class.active]="activeSearch2" ><a  ><img src="../../../../assets/svg/lupa.png"></a></li>
+            <li class="li1Search" (click)="show()" [class.active]="activeSearch2" ><a  class="lupa"><img title="search" src="../../../../assets/svg/lupa.png"></a></li>
             <div class="divSearch">
-                <a class="lupa" [class.active]="activeSearch2" (click)="show2()" ><img src="../../../../assets/svg/lupa.png"></a>
+                <a class="lupa" [class.active]="activeSearch2" (click)="show2()" ><img title="close" src="../../../../assets/svg/lupa.png"></a>
 
                 <input class="li2" spellcheck="false" autocomplete="none" (input)="sendText()" [class.active]="activeSearch" [(ngModel)]="ss">
             </div>
 
-            <li class="li1" (click)="showCharacter()">Characters</li>
-            <li class="li1" (click)="showLocations()">Location</li>
-            <li class="li1" (click)="showEpisodes()">Episode</li>
+            <li class="li1" [class.active]="activeSearch" (click)="showCharacter()">Characters</li>
+            <li class="li1" [class.active]="activeSearch" (click)="showLocations()">Location</li>
+            <li class="li1" [class.active]="activeSearch" (click)="showEpisodes()">Episode</li>
         </ul>
     </nav>
 </div>
