@@ -13,16 +13,57 @@
         <section class="firstSection">
             <h1 class="title">The Rick and Morty Test</h1>
             <div class="divImg">
-                <img  src="../../../assets/svg/rick.jpg" class="imgR">
+                <img class="imgR" src="../../../assets/svg/rick.jpg" >
             </div>
         </section>
 
         <section class="secondSection" *ngIf="searchingPanel">
-            <h1 style="color: white;" *ngIf="reading.length === 0 && todo2.length < 1">search your favorite Character, Location or Episode</h1>
-            <div *ngFor="let f of todo2">
-                <div >
-                    <p [routerLink]="'character/'+ f.id " style="color: white;">{{f.name}}</p>
-                </div>
+            <h1 style="color: white;" *ngIf="reading.length === 0">search your favorite Character, Location or Episode</h1>
+            <div class="box" *ngIf="reading.length > 0" > 
+
+            <article class="article" *ngFor="let f of todo | filter:reading ">
+                <div ></div>
+               <div class="divArticle">
+                    <img class="imgArticle" [src]="f.image" >
+                    </div>
+                    <div class="datosArticle">
+                        <section class="section">
+                            <a [routerLink]="'character/'+ f.id" 
+                            style="text-decoration:none"><h1 class="aSection1">{{f.name}}</h1></a>
+                            <span class="status">
+                                <span *ngIf="f.status == cosa" class="statusIconLive"></span>
+                                <span *ngIf="f.status == cosa2" class="statusIconDead"></span>
+                                <span *ngIf="f.status == cosa3" class="statusIconUnknow"></span>
+
+                                {{f.status}}-{{f.species}}</span>
+                        </section>
+                        
+                    </div>
+                   
+
+                    <!--<div class="datosArticle">
+                        <section class="section">
+                            <a [routerLink]="'character/'+ f.id" 
+                            style="text-decoration:none"><h1 class="aSection1">{{f.name}}</h1></a>
+                            <span class="status">
+                                <span *ngIf="f.status == cosa" class="statusIconLive"></span>
+                                <span *ngIf="f.status == cosa2" class="statusIconDead"></span>
+                                <span *ngIf="f.status == cosa3" class="statusIconUnknow"></span>
+
+                                {{f.status}}-{{f.species}}</span>
+                        </section>
+                        <section class="section">
+                            <span class="span1">Last Know Location:</span>
+                            <a class="aSection" > {{f.location.name}}</a>
+                        </section>
+                        <section class="section">
+                            <span class="span1">First seen in:</span>
+                            <a class="aSection1">{{f.origin.name}}</a>
+                            <a></a>
+                        </section>
+                    </div>  -->
+            </article>
+            
             </div>
         </section>
 

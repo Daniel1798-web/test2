@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   episode = false;
   searchingPanel = false
   things=[]
-  reading = ""
+  reading:any = ""
   iden:any = {}
   characters2
   episodes2
@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
   textFilter = ""
   todo=[]
   todo2=[]
-  arr = []
+  bb = []
 
   @Output() cosita = new EventEmitter(this.iden)
   
@@ -70,7 +70,6 @@ export class HomeComponent implements OnInit {
         this.todo.push(this.locations2[i])
       }
     })
-this.arr.push(this.todo)
     
   }
 
@@ -135,22 +134,40 @@ this.arr.push(this.todo)
   }
 
   filtrar(f){
-    this.reading = f.toLowerCase().split('')
+    var te = []
+    
+    te = this.todo
+
+    this.reading = f
+    
     console.log(this.reading)
-    for(let i = 0; i < 60 ; i++){
-     var te = []
-      this.todo[i].name.toLowerCase().split('')
-     console.log(te)
 
-     te.push(this.todo[i])
 
-      for(let e = 0; e < this.reading.length; e++){ 
+    
+    /*for(let i = 0; i < 60 ; i++){
+      for(let l = 0; l < this.reading.length; l++){
+        this.bb.push( te[i].name.toLowerCase().split(''))
 
-      if(this.arr[0].name === this.reading[e]){
-        this.todo2.push(this.arr[i])
-       return console.log(this.arr[i] + " " + this.reading)
+        if(this.bb[l] === this.reading[l]){
+          console.log(this.bb + " si señor" )
+
+        }else{
+          this.bb.length = 0
+        }
+
+       }
+
+      }
+    
       
-      }/*if(this.todo[i].name.replace(/ /g, "").toLowerCase().split('')  === this.reading){
+      if(this.reading === this.reading){
+        //this.todo2.push(te[i])
+       return console.log("conseguido")
+      
+      }else{
+        return console.log("error")
+      }
+      /*if(this.todo[i].name.replace(/ /g, "").toLowerCase().split('')  === this.reading){
         this.todo2.push(this.todo[i])
 
         return console.log(this.todo2[i].name)
@@ -158,16 +175,13 @@ this.arr.push(this.todo)
       }*/
       /*if(this.reading.length === 0){
         this.todo2.length = 0
-      }*/else{
-        return console.log("error")
-      }
+      }*/
      
-     // console.log(this.todo[i].name.replace(/ /g, "").toLowerCase())
+     // console.log(this.todo[i].name.replace(/ /g, "").toLowerCase())*/
       }
 
   
-    }
-  }
+    
+  
 
- 
 }
