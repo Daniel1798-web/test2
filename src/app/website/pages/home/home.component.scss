@@ -192,4 +192,10 @@
         height: initial;
         width: 100%;
     }
+
+    .firstSection{
+        &.active{
+display: none;
+        }
+    }
 }
