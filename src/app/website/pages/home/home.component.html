@@ -24,7 +24,6 @@
             <div class="box" *ngIf="reading.length > 0" > 
 
             <article class="article" *ngFor="let f of todo | filter:reading ">
-                <div ></div>
                <div class="divArticle">
                     <img class="imgArticle" [src]="f.image" >
                     </div>
@@ -36,35 +35,39 @@
                                 <span *ngIf="f.status == cosa" class="statusIconLive"></span>
                                 <span *ngIf="f.status == cosa2" class="statusIconDead"></span>
                                 <span *ngIf="f.status == cosa3" class="statusIconUnknow"></span>
-
-                                {{f.status}}-{{f.species}}</span>
+                                {{f.status}}<div *ngIf="f.gender">-</div>{{f.species}}</span>
                         </section>
+                                    <section class="section" *ngIf="f.air_date">
+                                        <span class="span1">Air Date:</span>
+                                        <a class="aSection2" >{{f.air_date}}</a> 
+                                    </section>
+                                    <section class="section" *ngIf="f.air_date"> 
+                                        <span class="span1">Episode:</span> 
+                                        <a class="aSection2">{{f.episode}}</a>
+                                    </section>
+                             
+                             <section class="section" *ngIf="f.gender">
+                                <span class="span1">Last Know Location:</span>
+                                <a class="aSection2" >{{f.location.name}}</a> 
+                            </section>
+                            <section class="section" *ngIf="f.gender"> 
+                                <span class="span1">origin:</span> 
+                                <a class="aSection2">{{f.origin.name}}</a>
+                            </section>
+
+                            <section class="section"  *ngIf="f.dimension">
+                                <span class="span1">Dimension:</span>
+                                <a class="aSection2">{{f.dimension}}</a>
+                            </section>
                       
-                        
+                            <span class="status" *ngIf="f.dimension">
+                                <span class="span1">Type:</span>
+                                <a class="aSection2">{{f.type}}</a>
+                                <span class="span1">
+                               </span>
+                            </span>
                     </div>
                    
-
-                    <!--<div class="datosArticle">
-                        <section class="section">
-                            <a [routerLink]="'character/'+ f.id" 
-                            style="text-decoration:none"><h1 class="aSection1">{{f.name}}</h1></a>
-                            <span class="status">
-                                <span *ngIf="f.status == cosa" class="statusIconLive"></span>
-                                <span *ngIf="f.status == cosa2" class="statusIconDead"></span>
-                                <span *ngIf="f.status == cosa3" class="statusIconUnknow"></span>
-
-                                {{f.status}}-{{f.species}}</span>
-                        </section>
-                        <section class="section">
-                            <span class="span1">Last Know Location:</span>
-                            <a class="aSection" > {{f.location.name}}</a>
-                        </section>
-                        <section class="section">
-                            <span class="span1">First seen in:</span>
-                            <a class="aSection1">{{f.origin.name}}</a>
-                            <a></a>
-                        </section>
-                    </div>  -->
             </article>
             
             </div>
@@ -80,7 +83,7 @@
                     <div class="datosArticle">
                         <section class="section">
                             <a [routerLink]="'character/'+ l.id" 
-                            style="text-decoration:none"><h1 class="aSection1">{{l.name}}</h1></a>
+                            style="text-decoration:none"><h1 class="aSection1">{{l.name }}</h1></a>
                             <span class="status">
                                 <span *ngIf="l.status == cosa" class="statusIconLive"></span>
                                 <span *ngIf="l.status == cosa2" class="statusIconDead"></span>
@@ -115,9 +118,6 @@
                                 <span class="span1">Type:</span>
                                 <a class="aSection2">{{v.type}}</a>
                                 <span class="span1">
-                             
-
-
                                </span>
                             </span>
                         </section>

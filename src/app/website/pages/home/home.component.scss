@@ -191,6 +191,13 @@
     .article{
         height: initial;
         width: 100%;
+        height: 100%;
+    }
+
+    .imgArticle{
+        border-radius: 50%;
+        margin-top: 20px;
+        height: auto;
     }
 
     .firstSection{

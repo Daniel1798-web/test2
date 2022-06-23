@@ -154,7 +154,7 @@
     }
 
     .article{
-        width: 100%;
+        width: 600px;
         height: 220px;
         display: flex;
         overflow: hidden;
@@ -182,5 +182,16 @@
     @media (max-width:500px){
         .divFun{
             width: 90%;
+        }
+
+        .article{
+            width: 450px;
+            margin-left: 20px;
+        }
+
+        .imgArticle{
+            border-radius: 50%;
+            margin-top: 20px;
+            height: auto;
         }
     }

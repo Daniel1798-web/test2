@@ -31,6 +31,7 @@ export class HomeComponent implements OnInit {
   todo2=[]
   bb = []
 
+
   @Output() cosita = new EventEmitter(this.iden)
   
 
@@ -46,6 +47,7 @@ export class HomeComponent implements OnInit {
     .subscribe(data => {
       this.characters = data
       this.characters2 = this.characters.results
+
       for(let i = 0; i < this.characters2.length; i++){
         this.characters2[i].locacion = 'character/'
         this.todo.push(this.characters2[i])
