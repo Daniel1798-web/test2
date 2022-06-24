@@ -120,7 +120,7 @@
         margin: 0px;
         padding: 0px;
         &.active{
-            display: flex;
+            display: none;
         }
     }
 
@@ -176,7 +176,12 @@
         margin: auto;
         &.active{
             margin-right: 20px;
+        }
+    }
 
+    .b{
+        &.active{
+            display: flex;
         }
     }
 
