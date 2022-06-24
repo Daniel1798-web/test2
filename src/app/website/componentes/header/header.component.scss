@@ -69,6 +69,7 @@
     .divSearch{
         display: flex;
         flex-direction: row;
+        height: 100px;
     }
 
     .li2{
@@ -87,6 +88,7 @@
             display: flex;
             color: black;
             width: 100%;
+            margin: auto;
             border-radius: 10px;
             margin-right: 2px;
 
@@ -96,6 +98,7 @@
     @keyframes slide{0%{transform:translateX(100%)}  100%{transform: translateX(0);}}
 
     .lupa{
+        margin: auto;
         &.active{
             display: none;
             margin: 1px;
