@@ -8,7 +8,7 @@
             <div class="divSearch">
                 <a class="lupa" [class.active]="activeSearch2"  ><img title="close" src="../../../../assets/svg/lupa.png"></a>
                 <input class="li2" spellcheck="false" autocomplete="none" (input)="sendText()" [class.active]="activeSearch" [(ngModel)]="ss">
-                <a class="lupa" [class.active]="activeSearch2" (click)="show2()"><img class="b" title="Back" src="../../../../assets/svg/portal2.png"></a>
+                <a class="lupa" [class.active]="activeSearch2" (click)="show2()"><img class="b" [class.active]="activeSearch" title="Back" src="../../../../assets/svg/portal2.png"></a>
 
             </div>
 
