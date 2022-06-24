@@ -24,9 +24,14 @@
             <div class="box" *ngIf="reading.length > 0" > 
 
             <article class="article" *ngFor="let f of todo | filter:reading ">
-               <div class="divArticle">
-                    <img class="imgArticle" [src]="f.image" >
-                    </div>
+               <div class="divArticle3">
+                    <img class="imgArticle3" [src]="f.image" >
+                </div>
+
+                    <!--Phone Image-->
+                    <div class="divArticle2">
+                        <img class="imgArticle2" [src]="f.image" >
+                            </div>
                     <div class="datosArticle">
                         <section class="section">
                             <a [routerLink]=" f.locacion + f.id" 
@@ -78,7 +83,7 @@
 
                 <article class="article" *ngFor="let l of characters.results">   
                     <div class="divArticle">
-                        <img class="imgArticle" [src]="l.image">
+                        <img class="imgArticleCharacter" [src]="l.image">
                     </div>   
                     <div class="datosArticle">
                         <section class="section">
